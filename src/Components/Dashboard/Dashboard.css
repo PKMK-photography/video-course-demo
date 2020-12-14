@@ -1,0 +1,58 @@
+#dashboard {
+    min-height: 100vh;
+    background: #fafafa;
+    box-sizing: border-box;
+    padding: 20px 250px;
+}
+
+#your-courses {
+    height: 30vh;
+}
+
+#course-flex {
+    width: 100%;
+    display: flex;
+}
+
+#course-selection {
+    margin-right: 15px;
+}
+
+#course-selection p {
+    margin: 6px 0;
+}
+
+#course-image {
+    width: 225px;
+    border-radius: 5px;
+}
+
+#course-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#course-duration {
+    color: gray;
+}
+
+#course-price {
+    font-weight: bold;
+}
+
+#purchase-btn {
+    height: 40px;
+    width: 90px;
+    border: 2px solid #FF6400;
+    background: transparent;
+    color: #FF6400;
+    font-weight: bold;
+    transition: 200ms;
+    cursor: pointer;
+}
+
+#purchase-btn:hover {
+    background: #FF6400;
+    color: white;
+}
