@@ -1,12 +1,24 @@
 import {useState} from 'react';
+import {connect} from 'react-redux';
 import {courses} from '../../courses';
 import mainImage from '../../assets/video-course-demo-4.jpg';
 import info from '../../assets/info.svg';
+import {addToCart} from '../../redux/cartReducer';
 import './Dashboard.css';
 
 const Dashboard = props => {
     let [userCourses, setUserCourses] = useState([]),
         [descriptionModal, setDescriptionModal] = useState('');
+
+    const addItem = (course) => {
+        for(let i = 0; i < props.cart.length; i++){
+            if(props.cart[i].title === course.title){
+                return
+            }
+        }
+
+        props.addToCart(course);
+    }
 
     return (
         <main id='dashboard'>
@@ -35,7 +47,7 @@ const Dashboard = props => {
                         <p id='course-title'>{course.title}</p>
                         <p id='course-duration'>Duration: {course.duration}</p>
                         <p id='course-price'>${course.price}</p>
-                        <button id='purchase-btn'>Purchase</button>
+                        <button id='purchase-btn' onClick={() => addItem(course)}>Add to Cart</button>
                     </section>
                 ))}
             </section>
@@ -43,4 +55,6 @@ const Dashboard = props => {
     )
 }
 
-export default Dashboard;
+const mapStateToProps = reduxState => reduxState;
+
+export default connect(mapStateToProps, {addToCart})(Dashboard);
