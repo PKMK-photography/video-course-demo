@@ -4,6 +4,7 @@ import Course from './Components/Course/Course';
 
 export default (
     <Switch>
-        <Route exact path='/' component={Course}/>
+        <Route exact path='/' component={Dashboard}/>
+        <Route path='/course/:id' component={Course}/>
     </Switch>
 )
