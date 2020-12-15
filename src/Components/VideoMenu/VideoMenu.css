@@ -1,0 +1,6 @@
+#video-menu {
+    height: 100vh;
+    min-width: 350px;
+    box-sizing: border-box;
+    border-right: 2px solid black;
+}
